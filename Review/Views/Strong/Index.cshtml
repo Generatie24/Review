@@ -1,0 +1,28 @@
+﻿
+@* Strongly typed view*@
+
+ @model Product
+
+<h1>Strong view</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Naam</th>
+        <th>Price</th>
+    </tr>
+    @foreach (var item in Model.GetProducts())
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Naam</td>
+            <td>@item.Prijs</td>
+        </tr>
+    }
+   
+    
+</table>
+<tfoot>
+    Total:  @ViewBag.Calculate
+    @Model.Calculate();
+</tfoot>

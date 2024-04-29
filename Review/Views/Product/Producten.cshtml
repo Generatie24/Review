@@ -1,0 +1,53 @@
+﻿@{
+
+}
+<h1>Producten Lijst</h1>
+
+<h2>Producten lijst met Viewbag</h2>
+
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Naam</th>
+            <th>Prijs</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var product in ViewBag.Producten)
+        {
+            <tr>
+                <td>@product.Naam</td>
+                <td>@product.Prijs</td>
+            </tr>
+        }
+
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td>
+                <b>Totaal</b>
+            </td>
+            <td>
+                <b>
+                    @ViewBag.Totaal
+                </b>
+            </td>
+        </tr>
+
+    </tfoot>
+</table>
+
+
+
+
+@* <ul>
+    @foreach (var product in ViewData["ProductenLijst"] as List<Product>)
+
+    {
+        <li>@product.Naam - @product.Prijs</li>
+    }
+
+    <p>Totaal @ViewData["TotaalViewData"] </p>
+</ul> *@
