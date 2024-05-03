@@ -1,6 +1,5 @@
-﻿@{
+﻿@model Review.Models.Product
 
-}
 <h1>Producten Lijst</h1>
 
 <h2>Producten lijst met Viewbag</h2>
@@ -14,7 +13,7 @@
     </thead>
     <tbody>
 
-        @foreach (var product in ViewBag.Producten)
+        @foreach (var product in Model.GetProducts())
         {
             <tr>
                 <td>@product.Naam</td>
@@ -31,7 +30,7 @@
             </td>
             <td>
                 <b>
-                    @ViewBag.Totaal
+                    @Model.Calculate()
                 </b>
             </td>
         </tr>
@@ -40,14 +39,3 @@
 </table>
 
 
-
-
-@* <ul>
-    @foreach (var product in ViewData["ProductenLijst"] as List<Product>)
-
-    {
-        <li>@product.Naam - @product.Prijs</li>
-    }
-
-    <p>Totaal @ViewData["TotaalViewData"] </p>
-</ul> *@

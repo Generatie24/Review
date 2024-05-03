@@ -5,8 +5,12 @@
         public int Id { get; set; }
         public string Naam { get; set; }
         public decimal Prijs { get; set; }
-        
-        List<Product> products = new List<Product>();
+        private List<Product> products;
+
+        public Product()
+        {
+            products = new List<Product>();
+        }
 
         public List<Product> GetProducts()
         {
@@ -16,10 +20,10 @@
             products.Add(new Product { Id = 4, Naam = "Potato", Prijs = 9.02m });
             return products;
         }
+
         public decimal Calculate()
         {
-            var total = products.Sum(x => x.Prijs);
-            return total;
+            return products.Sum(x => x.Prijs);
         }
     }
 }
